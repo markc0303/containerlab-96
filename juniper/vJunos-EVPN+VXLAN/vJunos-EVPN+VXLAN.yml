@@ -1,0 +1,119 @@
+name: vJunos-EVPN+VXLAN
+prefix: ""
+mgmt:
+  network: custom_mgmt
+  ipv4-subnet: 172.20.96.0/24
+
+topology:
+  defaults:
+    env:
+      CLAB_MGMT_PASSTHROUGH: "true"    
+      
+  nodes:
+      
+    spine1:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.11 
+      
+    spine2:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.12  
+                                   
+    leaf1:
+      kind: juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.4R2-S2.1
+      cpu: 4
+      memory: 6Gb
+      mgmt-ipv4: 172.20.96.21
+                
+    leaf2:
+      kind: juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.4R2-S2.1
+      cpu: 4
+      memory: 6Gb
+      mgmt-ipv4: 172.20.96.22
+
+    leaf3:
+      kind: juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.4R2-S2.1
+      cpu: 4
+      memory: 6Gb
+      mgmt-ipv4: 172.20.96.23
+      
+    leaf4:
+      kind: juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.4R2-S2.1
+      cpu: 4
+      memory: 6Gb
+      mgmt-ipv4: 172.20.96.24      
+ 
+    mlag1:
+      kind: juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.4R2-S2.1
+      cpu: 4
+      memory: 6Gb
+      mgmt-ipv4: 172.20.96.31
+
+    mlag2:
+      kind: juniper_vjunosswitch
+      image: vrnetlab/vr-vjunosswitch:23.4R2-S2.1
+      cpu: 4
+      memory: 6Gb
+      mgmt-ipv4: 172.20.96.32
+            
+    host1:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.101
+      
+    host2:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.102
+      
+    host3:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.103     
+
+  links:
+    - endpoints: [ "spine1:eth1", "leaf1:eth1"]
+    - endpoints: [ "spine1:eth2", "leaf2:eth1"]
+    - endpoints: [ "spine1:eth3", "leaf3:eth1"]
+    - endpoints: [ "spine1:eth4", "leaf4:eth1"] 
+    
+    - endpoints: [ "spine2:eth1", "leaf1:eth2"]
+    - endpoints: [ "spine2:eth2", "leaf2:eth2"]
+    - endpoints: [ "spine2:eth3", "leaf3:eth2"]
+    - endpoints: [ "spine2:eth4", "leaf4:eth2"]     
+    
+    - endpoints: [ "leaf1:eth3", "mlag1:eth1"] 
+    - endpoints: [ "leaf2:eth3", "mlag2:eth1"]
+    
+    - endpoints: [ "mlag1:eth2", "mlag2:eth2"]
+    
+    - endpoints: [ "mlag1:eth3", "host1:eth1"]
+    - endpoints: [ "mlag2:eth3", "host1:eth2"]
+    - endpoints: [ "mlag1:eth4", "host2:eth1"]
+    - endpoints: [ "mlag2:eth4", "host2:eth2"] 
+    
+    - endpoints: [ "leaf3:eth3", "host3:eth1"]
+    - endpoints: [ "leaf4:eth3", "host3:eth2"]   
+    
+    - endpoints: [ "leaf3:eth4", "host2:eth3"]
+    - endpoints: [ "leaf4:eth4", "host2:eth4"]  
+    
+    - endpoints: [ "host1:eth3", "host:host1_eth3"]
+    - endpoints: [ "host3:eth3", "host:host3_eth3"]           

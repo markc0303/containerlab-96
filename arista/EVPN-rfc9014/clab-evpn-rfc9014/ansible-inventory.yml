@@ -1,0 +1,53 @@
+all:
+  vars:
+    # The generated inventory is assumed to be used from the clab host.
+    # Hence no http proxy should be used. Therefore we make sure the http
+    # module does not attempt using any global http proxy.
+    ansible_httpapi_use_proxy: false
+  children:
+    ceos:
+      vars:
+        # ansible_connection: set ansible_connection variable if required
+        ansible_user: admin
+        ansible_password: admin
+      hosts:
+        dc1-leaf1-server1:
+          ansible_host: 172.20.96.201
+        dc1-leaf1a:
+          ansible_host: 172.20.96.101
+        dc1-leaf1b:
+          ansible_host: 172.20.96.102
+        dc1-leaf1c:
+          ansible_host: 172.20.96.151
+        dc1-leaf2-server1:
+          ansible_host: 172.20.96.202
+        dc1-leaf2a:
+          ansible_host: 172.20.96.103
+        dc1-leaf2b:
+          ansible_host: 172.20.96.104
+        dc1-leaf2c:
+          ansible_host: 172.20.96.152
+        dc1-spine1:
+          ansible_host: 172.20.96.11
+        dc1-spine2:
+          ansible_host: 172.20.96.12
+        dc2-leaf1-server1:
+          ansible_host: 172.20.96.203
+        dc2-leaf1a:
+          ansible_host: 172.20.96.111
+        dc2-leaf1b:
+          ansible_host: 172.20.96.112
+        dc2-leaf1c:
+          ansible_host: 172.20.96.161
+        dc2-leaf2-server1:
+          ansible_host: 172.20.96.204
+        dc2-leaf2a:
+          ansible_host: 172.20.96.113
+        dc2-leaf2b:
+          ansible_host: 172.20.96.114
+        dc2-leaf2c:
+          ansible_host: 172.20.96.162
+        dc2-spine1:
+          ansible_host: 172.20.96.21
+        dc2-spine2:
+          ansible_host: 172.20.96.22

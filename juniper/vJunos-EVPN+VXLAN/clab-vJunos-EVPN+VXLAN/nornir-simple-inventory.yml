@@ -1,0 +1,56 @@
+---
+host1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.101
+host2:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.102
+host3:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.103
+spine1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.11
+spine2:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.12
+leaf1:
+    username: admin
+    password: admin@123
+    platform: juniper_vjunosswitch
+    hostname: 172.20.96.21
+leaf2:
+    username: admin
+    password: admin@123
+    platform: juniper_vjunosswitch
+    hostname: 172.20.96.22
+leaf3:
+    username: admin
+    password: admin@123
+    platform: juniper_vjunosswitch
+    hostname: 172.20.96.23
+leaf4:
+    username: admin
+    password: admin@123
+    platform: juniper_vjunosswitch
+    hostname: 172.20.96.24
+mlag1:
+    username: admin
+    password: admin@123
+    platform: juniper_vjunosswitch
+    hostname: 172.20.96.31
+mlag2:
+    username: admin
+    password: admin@123
+    platform: juniper_vjunosswitch
+    hostname: 172.20.96.32

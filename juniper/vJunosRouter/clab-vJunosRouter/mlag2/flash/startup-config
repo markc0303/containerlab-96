@@ -1,0 +1,84 @@
+! Startup-config last modified at Fri Sep 18 12:42:02 2026 by root
+! device: mlag2 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$Zv8LKvyQBLn.SLZ1$sfO3U2r4Lp13si6.oKl1Kl2lak6JeWs5LugAdBodgoBQNJerBiVdGYFdjmzHncNIqxcNIJRgyLvPQVt6WvTOW.
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname mlag2
+!
+spanning-tree mode mstp
+no spanning-tree vlan-id 4094
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vlan 101-103
+!
+vlan 4094
+   trunk group mlag
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Port-Channel1
+   switchport trunk allowed vlan 101-103
+   switchport mode trunk
+   mlag 1
+!
+interface Port-Channel3
+   switchport trunk allowed vlan 101-103
+   switchport mode trunk
+   mlag 3
+!
+interface Port-Channel1000
+   switchport mode trunk
+   switchport trunk group mlag
+!
+interface Ethernet1
+   channel-group 1 mode active
+   lacp timer fast
+!
+interface Ethernet2
+   channel-group 1000 mode active
+!
+interface Ethernet3
+   channel-group 3 mode active
+!
+interface Management0
+   ip address 172.20.96.13/24
+!
+interface Vlan4094
+   ip address 10.255.252.1/31
+!
+no ip routing
+!
+mlag configuration
+   domain-id 1
+   local-interface Vlan4094
+   peer-address 10.255.252.0
+   peer-link Port-Channel1000
+!
+ip route 0.0.0.0/0 172.20.96.1
+!
+router multicast
+   ipv4
+      software-forwarding kernel
+   !
+   ipv6
+      software-forwarding kernel
+!
+end

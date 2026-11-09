@@ -1,0 +1,464 @@
+{
+  "name": "arista/Twgate-EVPN-VXLAN-IPv6",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "",
+      "mgmt": {
+        "network": "mgmt-01",
+        "bridge": "br-9ad4eb223172",
+        "ipv4-subnet": "172.20.94.0/24",
+        "ipv4-gw": "172.20.94.1",
+        "external-access": true,
+        "ipam": {
+          "provider": "containerlab"
+        }
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "host1": {
+      "index": "0",
+      "shortname": "host1",
+      "longname": "host1",
+      "fqdn": "host1.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/host1",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.21",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:82:c7:cd",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/host1",
+        "clab-node-longname": "host1",
+        "clab-node-name": "host1",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "host2": {
+      "index": "1",
+      "shortname": "host2",
+      "longname": "host2",
+      "fqdn": "host2.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/host2",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.22",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:cb:d2:b6",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/host2",
+        "clab-node-longname": "host2",
+        "clab-node-name": "host2",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pc1": {
+      "index": "2",
+      "shortname": "pc1",
+      "longname": "pc1",
+      "fqdn": "pc1.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/pc1",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.31",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:5e:62:20",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/pc1",
+        "clab-node-longname": "pc1",
+        "clab-node-name": "pc1",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "pc2": {
+      "index": "3",
+      "shortname": "pc2",
+      "longname": "pc2",
+      "fqdn": "pc2.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/pc2",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.32",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:18:1a:ba",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/pc2",
+        "clab-node-longname": "pc2",
+        "clab-node-name": "pc2",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r1": {
+      "index": "4",
+      "shortname": "r1",
+      "longname": "r1",
+      "fqdn": "r1.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r1",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.11",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:17:ea:cf",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r1",
+        "clab-node-longname": "r1",
+        "clab-node-name": "r1",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r2": {
+      "index": "5",
+      "shortname": "r2",
+      "longname": "r2",
+      "fqdn": "r2.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r2",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.12",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:01:9d:60",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r2",
+        "clab-node-longname": "r2",
+        "clab-node-name": "r2",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r3": {
+      "index": "6",
+      "shortname": "r3",
+      "longname": "r3",
+      "fqdn": "r3.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r3",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.13",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:b8:ce:b1",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r3",
+        "clab-node-longname": "r3",
+        "clab-node-name": "r3",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r4": {
+      "index": "7",
+      "shortname": "r4",
+      "longname": "r4",
+      "fqdn": "r4.arista/Twgate-EVPN-VXLAN-IPv6.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r4",
+      "kind": "ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "mgmt-01",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.94.14",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:1f:80:a9",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9ad4eb223172",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r4",
+        "clab-node-longname": "r4",
+        "clab-node-name": "r4",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/Twgate-EVPN-VXLAN-IPv6.yml",
+        "containerlab": "arista/Twgate-EVPN-VXLAN-IPv6"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:28:f8:42",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:e8:6a:53",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:5a:a5:be",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r3",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:52:b3:7c",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:b1:0f:05",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r4",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:71:6c:68",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:eb:1a:11",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:a3:6c:53",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r2",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:72:d5:3c",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:68:77:f0",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:04:3c:99",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r4",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:2f:19:1d",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r3",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:95:ac:da",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:69:83:9c",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r4",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:13:bd:41",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:43:40:cc",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "host1",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:df:a0:bd",
+          "peer": "z"
+        },
+        "z": {
+          "node": "pc1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:0b:b0:70",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "host2",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:2a:1d:e6",
+          "peer": "z"
+        },
+        "z": {
+          "node": "pc2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:c2:4c:fe",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "host1",
+          "interface": "eth4",
+          "mac": "aa:c1:ab:72:c0:b7",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host",
+          "interface": "h1-eth4",
+          "mac": "aa:c1:ab:76:85:49",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "host2",
+          "interface": "eth4",
+          "mac": "aa:c1:ab:d6:a0:d8",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host",
+          "interface": "h2-eth4",
+          "mac": "aa:c1:ab:34:ad:c0",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

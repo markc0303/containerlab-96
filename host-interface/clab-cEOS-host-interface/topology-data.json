@@ -1,0 +1,84 @@
+{
+  "name": "cEOS-host-interface",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "",
+      "mgmt": {
+        "network": "custom_mgmt",
+        "bridge": "br-9d829eeb8551",
+        "ipv4-subnet": "172.20.96.0/24",
+        "ipv4-gw": "172.20.96.1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "spine1": {
+      "index": "0",
+      "shortname": "spine1",
+      "longname": "spine1",
+      "fqdn": "spine1.cEOS-host-interface.io",
+      "group": "",
+      "labdir": "/home/mark/containerlab/host-interface/clab-cEOS-host-interface/spine1",
+      "kind": "arista_ceos",
+      "image": "ceos:4.34.8M",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.96.11",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:25:d5:2c",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-9d829eeb8551",
+        "clab-node-group": "",
+        "clab-node-kind": "arista_ceos",
+        "clab-node-lab-dir": "/home/mark/containerlab/host-interface/clab-cEOS-host-interface/spine1",
+        "clab-node-longname": "spine1",
+        "clab-node-name": "spine1",
+        "clab-node-type": "",
+        "clab-owner": "mark",
+        "clab-topo-file": "/home/mark/containerlab/host-interface/host-interface.yml",
+        "containerlab": "cEOS-host-interface"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "spine1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:83:77:72",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host",
+          "interface": "spine1_eth1",
+          "mac": "aa:c1:ab:19:63:e3",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "spine1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:4f:b1:fa",
+          "peer": "z"
+        },
+        "z": {
+          "node": "host",
+          "interface": "spine1_eth2",
+          "mac": "aa:c1:ab:64:27:fa",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+! Startup-config last modified at Fri Oct  2 03:16:56 2026 by root
+! device: dc1-spine2 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$yHgXLaGiu8E1ebOY$qKtZ1t00gjk4g6xyVXGj/iCp8P.3zTQVnit3P2XchYdKyd/I.Qwgl/WvmqTNZYlLdqH52orcG1j/NSr8/kzHb0
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname dc1-spine2
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Ethernet1
+!
+interface Ethernet2
+!
+interface Ethernet3
+!
+interface Ethernet4
+!
+interface Management0
+   ip address 172.20.96.12/24
+!
+no ip routing
+!
+ip route 0.0.0.0/0 172.16.96.1
+!
+end

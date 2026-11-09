@@ -1,0 +1,99 @@
+! Startup-config last modified at Sun Sep 20 12:20:50 2026 by root
+! device: spine1 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$/bOFfeME6JPIiuxm$2qsfVCqAzpLLyvFirY.gxScW0dzdCGNAZhSZYhdp.1Wcpxi8B/cmpB.OIlZ7rz7PWBOdIFX0RvsOZHrZfiROR/
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+load-interval default 1
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname spine1
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Ethernet1
+   no switchport
+   ip address 10.1.1.0/31
+!
+interface Ethernet2
+   no switchport
+   ip address 10.1.1.2/31
+!
+interface Ethernet3
+   no switchport
+   ip address 10.1.1.4/31
+!
+interface Ethernet4
+   no switchport
+   ip address 10.1.1.6/31
+!
+interface Loopback0
+   ip address 1.1.1.11/32
+!
+interface Management0
+   ip address 172.20.96.11/24
+!
+ip routing
+!
+ip prefix-list PL-LOOPBACKS
+   seq 10 permit 1.1.1.0/24 le 32
+!
+ip route 0.0.0.0/0 172.20.96.1
+!
+route-map RM-CONN-2-BGP permit 10
+   match ip address prefix-list PL-LOOPBACKS
+!
+router bgp 65001
+   no bgp default ipv4-unicast
+   maximum-paths 4 ecmp 4
+   neighbor EVPN-OVERLAY peer group
+   neighbor EVPN-OVERLAY next-hop-unchanged
+   neighbor EVPN-OVERLAY update-source Loopback0
+   neighbor EVPN-OVERLAY ebgp-multihop 3
+   neighbor EVPN-OVERLAY send-community
+   neighbor EVPN-UNDERLAY peer group
+   neighbor EVPN-UNDERLAY bfd
+   neighbor 2.2.2.21 peer group EVPN-OVERLAY
+   neighbor 2.2.2.21 remote-as 201
+   neighbor 2.2.2.22 peer group EVPN-OVERLAY
+   neighbor 2.2.2.22 remote-as 202
+   neighbor 2.2.2.23 peer group EVPN-OVERLAY
+   neighbor 2.2.2.23 remote-as 203
+   neighbor 2.2.2.24 peer group EVPN-OVERLAY
+   neighbor 2.2.2.24 remote-as 204
+   neighbor 10.1.1.1 peer group EVPN-UNDERLAY
+   neighbor 10.1.1.1 remote-as 201
+   neighbor 10.1.1.3 peer group EVPN-UNDERLAY
+   neighbor 10.1.1.3 remote-as 202
+   neighbor 10.1.1.5 peer group EVPN-UNDERLAY
+   neighbor 10.1.1.5 remote-as 203
+   neighbor 10.1.1.7 peer group EVPN-UNDERLAY
+   neighbor 10.1.1.7 remote-as 204
+   redistribute connected route-map RM-CONN-2-BGP
+   !
+   address-family evpn
+      neighbor EVPN-OVERLAY activate
+   !
+   address-family ipv4
+      neighbor EVPN-UNDERLAY activate
+!
+end

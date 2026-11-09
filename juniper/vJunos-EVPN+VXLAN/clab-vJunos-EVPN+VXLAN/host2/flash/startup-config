@@ -1,0 +1,69 @@
+! Startup-config last modified at Sun Sep 20 12:20:50 2026 by root
+! device: host2 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$XfSuGmO52HO1fyi4$2RVCCTLHOaJMY7USucfMVVq5aKXoxGWO0Zu2oUVRk50lkEqv5ubdZl8l2UFo8nSIul8QWWnxMtTN0A.768nFm/
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname host2
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vlan 10-11
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Port-Channel1
+   switchport trunk allowed vlan 10-11
+   switchport mode trunk
+!
+interface Port-Channel2
+   switchport trunk allowed vlan 10-11
+   switchport mode trunk
+!
+interface Ethernet1
+   shutdown
+   channel-group 1 mode active
+   lacp timer fast
+!
+interface Ethernet2
+   shutdown
+   channel-group 1 mode active
+   lacp timer fast
+!
+interface Ethernet3
+   channel-group 2 mode active
+   lacp timer fast
+!
+interface Ethernet4
+   channel-group 2 mode active
+   lacp timer fast
+!
+interface Management0
+   ip address 172.20.96.102/24
+!
+interface Vlan10
+   ip address 100.1.10.102/24
+!
+no ip routing
+!
+ip route 0.0.0.0/0 172.20.96.1
+!
+end

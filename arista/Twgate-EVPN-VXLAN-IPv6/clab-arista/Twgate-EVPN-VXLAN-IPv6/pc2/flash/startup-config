@@ -1,0 +1,59 @@
+! Startup-config last modified at Mon Nov  9 07:29:12 2026 by root
+! device: pc2 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$f9hQOa.x.SaFhwnA$ZFhQ/rEB7b0UJQYIm7gGSAkEpwZoeRWJuG.1Tkz3XhSEcxilNpnxTsXIjsmqvgT1nx3Sv/8klC8i0KRvqTfgo/
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname pc2
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vrf instance MGMT
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Ethernet1
+   no switchport
+   ip address 100.2.1.100/24
+   ipv6 address 1001:2::100/64
+!
+interface Management0
+   vrf MGMT
+   ip address 172.20.94.32/24
+!
+no ip routing
+no ip routing vrf MGMT
+!
+ipv6 unicast-routing
+!
+ip route 0.0.0.0/0 100.2.1.254
+ip route vrf MGMT 0.0.0.0/0 172.20.94.1
+!
+ipv6 route ::/0 1001:2::ffff
+!
+router multicast
+   ipv4
+      software-forwarding kernel
+   !
+   ipv6
+      software-forwarding kernel
+!
+end

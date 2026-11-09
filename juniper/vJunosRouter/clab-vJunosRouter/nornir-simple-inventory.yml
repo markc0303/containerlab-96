@@ -1,0 +1,21 @@
+---
+mlag1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.12
+mlag2:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.13
+sw1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.20.96.14
+vjunosr1:
+    username: admin
+    password: admin@123
+    platform: juniper_vjunosrouter
+    hostname: 172.20.96.11

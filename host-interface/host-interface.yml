@@ -1,0 +1,23 @@
+name: cEOS-host-interface
+prefix: ""
+mgmt:
+  network: custom_mgmt
+  ipv4-subnet: 172.20.96.0/24
+
+topology:
+  defaults:
+    env:
+      CLAB_MGMT_PASSTHROUGH: "true"    
+      
+  nodes:   
+    spine1:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.11 
+      
+
+  links:
+    - endpoints: [ "spine1:eth1", "host:spine1_eth1"]
+    - endpoints: [ "spine1:eth2", "host:spine1_eth2"]       

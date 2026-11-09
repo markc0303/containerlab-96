@@ -1,0 +1,53 @@
+name: vJunosRouter
+prefix: ""
+mgmt:
+  network: custom_mgmt
+  ipv4-subnet: 172.20.96.0/24
+
+topology:
+  defaults:
+    env:
+      CLAB_MGMT_PASSTHROUGH: "true"    
+      
+  nodes:
+                                    
+    vjunosr1:
+      kind: juniper_vjunosrouter
+      image: vrnetlab/juniper_vjunos-switch:23.4R2-S2.1
+      cpu: 4
+      memory: 6Gb
+      mgmt-ipv4: 172.20.96.11
+      
+    mlag1:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 2
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.12 
+
+    mlag2:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 2
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.13 
+                
+    sw1:
+      kind: arista_ceos
+      image: ceos:4.34.8M
+      cpu: 2
+      memory: 2Gb
+      mgmt-ipv4: 172.20.96.14
+      
+      
+  links:
+    - endpoints: [ "vjunosr1:eth1", "mlag1:eth1"]
+    - endpoints: [ "vjunosr1:eth2", "mlag2:eth1"]
+    - endpoints: [ "vjunosr1:eth3", "host:vjunos1_eth1"]
+    
+    - endpoints: [ "mlag1:eth2", "mlag2:eth2"]
+    - endpoints: [ "mlag1:eth3", "sw1:eth1"]
+    - endpoints: [ "mlag2:eth3", "sw1:eth2"]    
+    
+    - endpoints: [ "sw1:eth3", "host:sw1_eth3"] 
+         

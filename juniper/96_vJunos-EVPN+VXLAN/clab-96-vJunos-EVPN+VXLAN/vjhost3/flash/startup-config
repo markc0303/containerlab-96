@@ -1,0 +1,60 @@
+! Startup-config last modified at Wed Sep 16 07:27:15 2026 by root
+! device: vjhost3 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$JRc7dJdw.Eaxi7vy$I4dfqAToOeUoEvKdm49ZwQRBO8U6Nf.JNWcHKboeYrYXVEhgpjH0DpVQgLHZdt.zxxISWMau.j6VJn/tiZWfY/
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+load-interval default 1
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname vjhost3
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vlan 10-11
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Port-Channel1
+   switchport trunk allowed vlan 10-11
+   switchport mode trunk
+!
+interface Ethernet1
+   channel-group 1 mode active
+   lacp timer fast
+!
+interface Ethernet2
+   channel-group 1 mode active
+   lacp timer fast
+!
+interface Management0
+   ip address 172.20.96.103/24
+!
+interface Vlan10
+   ip address 100.1.10.103/24
+!
+interface Vlan11
+   ip address 100.1.11.103/24
+!
+no ip routing
+!
+ip route 0.0.0.0/0 172.20.96.1
+!
+end

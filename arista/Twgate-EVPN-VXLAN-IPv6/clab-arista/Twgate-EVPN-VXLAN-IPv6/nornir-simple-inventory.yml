@@ -1,0 +1,41 @@
+---
+host1:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.21
+host2:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.22
+pc1:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.31
+pc2:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.32
+r1:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.11
+r2:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.12
+r3:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.13
+r4:
+    username: admin
+    password: admin
+    platform: ceos
+    hostname: 172.20.94.14

@@ -1,0 +1,72 @@
+name: arista/Twgate-EVPN-VXLAN-IPv6
+prefix: ""
+mgmt:
+  network: mgmt-01
+  ipv4-subnet: 172.20.94.0/24
+
+topology:
+  nodes:
+
+    r1:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.11
+
+    r2:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.12
+
+    r3:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.13
+
+    r4:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.14
+                   
+
+    host1:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.21
+    host2:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.22    
+    pc1:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.31 
+    pc2:
+      kind: ceos
+      image: ceos:4.34.8M
+      cpu: 1.5
+      mgmt-ipv4: 172.20.94.32               
+
+  links:
+    - endpoints: [ "r1:eth1", "r2:eth1"]
+    - endpoints: [ "r1:eth2", "r3:eth2"]
+    - endpoints: [ "r2:eth2", "r4:eth2"]
+
+    - endpoints: [ "r1:eth3", "host1:eth1"] 
+    - endpoints: [ "r2:eth3", "host1:eth2"]   
+
+    - endpoints: [ "r3:eth1", "r4:eth1"]          
+
+    - endpoints: [ "r3:eth3", "host2:eth1"] 
+    - endpoints: [ "r4:eth3", "host2:eth2"] 
+    
+    - endpoints: [ "host1:eth3", "pc1:eth1"]
+    - endpoints: [ "host2:eth3", "pc2:eth1"]
+    - endpoints: [ "host1:eth4", "host:h1-eth4"]
+    - endpoints: [ "host2:eth4", "host:h2-eth4"]
