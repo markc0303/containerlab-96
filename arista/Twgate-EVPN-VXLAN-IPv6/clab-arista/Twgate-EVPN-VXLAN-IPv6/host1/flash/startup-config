@@ -1,4 +1,4 @@
-! Startup-config last modified at Mon Nov  9 07:29:12 2026 by root
+! Startup-config last modified at Wed Nov 11 06:26:29 2026 by root
 ! device: host1 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
 !
 no aaa root
@@ -48,6 +48,8 @@ interface Ethernet3
 !
 interface Ethernet4
    switchport access vlan 11
+!
+interface Ethernet49
 !
 interface Management0
    vrf MGMT

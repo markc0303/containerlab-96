@@ -1,0 +1,44 @@
+! Startup-config last modified at Fri Nov 13 10:04:18 2026 by root
+! device: dc2-leaf1-server1 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$hRPpt0mRKg1IbLxq$zuZlB/ozlYBXH6ObqfpWavwOnVRwRJMb5tL/PjjXWUdG0osH2RadZBsPvUDUiqP8DAJ34E4hPky5xAhzvkMH40
+username arista privilege 15 role network-admin secret sha512 $6$GX5WBIf4Gt/N8VVV$sJGc.25dcxHjMa5DiyFd/BQEs/olKOzvyHiELq0HYFJlc905Fet16XF3lbNBDllpldRlRU0q27SQm4dsg7f9h/
+!
+management api http-commands
+   no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname dc2-leaf1-server1
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+interface Ethernet1
+!
+interface Ethernet2
+!
+interface Management0
+   ip address 172.20.96.114/24
+!
+no ip routing
+!
+ip route 0.0.0.0/0 172.20.96.1
+!
+router multicast
+   ipv4
+      software-forwarding kernel
+   !
+   ipv6
+      software-forwarding kernel
+!
+end

@@ -1,4 +1,4 @@
-! Startup-config last modified at Mon Nov  9 07:29:12 2026 by root
+! Startup-config last modified at Wed Nov 11 06:26:31 2026 by root
 ! device: r2 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
 !
 no aaa root
@@ -68,6 +68,8 @@ interface Ethernet3
    vrrp 1 ipv4 100.1.1.254
    vrrp 1 ipv6 1001:1::ffff
    vrrp 1 ipv4 version 3
+!
+interface Ethernet49
 !
 interface Loopback0
    ip address 1.1.1.2/32
