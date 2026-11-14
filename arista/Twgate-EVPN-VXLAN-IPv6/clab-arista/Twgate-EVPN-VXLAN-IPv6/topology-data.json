@@ -6,7 +6,7 @@
       "prefix": "",
       "mgmt": {
         "network": "mgmt-01",
-        "bridge": "br-256709ed9fbd",
+        "bridge": "br-68f064fc5f00",
         "ipv4-subnet": "172.20.94.0/24",
         "ipv4-gw": "172.20.94.1",
         "external-access": true,
@@ -33,9 +33,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:1f:ad:38",
+      "mac-address": "00:1c:73:f3:91:0e",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/host1",
@@ -64,9 +64,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:1f:6f:62",
+      "mac-address": "00:1c:73:c4:be:cd",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/host2",
@@ -95,9 +95,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:b0:12:f9",
+      "mac-address": "00:1c:73:3a:5c:c5",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/pc1",
@@ -126,9 +126,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:b9:b1:de",
+      "mac-address": "00:1c:73:ba:8f:17",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/pc2",
@@ -157,9 +157,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:b9:02:2b",
+      "mac-address": "00:1c:73:07:e0:55",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r1",
@@ -188,9 +188,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:2e:a6:ed",
+      "mac-address": "00:1c:73:ef:68:96",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r2",
@@ -219,9 +219,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:7e:c8:bf",
+      "mac-address": "00:1c:73:07:39:48",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r3",
@@ -250,9 +250,9 @@
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:2f:7d:7f",
+      "mac-address": "00:1c:73:9b:23:44",
       "labels": {
-        "clab-mgmt-net-bridge": "br-256709ed9fbd",
+        "clab-mgmt-net-bridge": "br-68f064fc5f00",
         "clab-node-group": "",
         "clab-node-kind": "ceos",
         "clab-node-lab-dir": "/home/mark/containerlab/arista/Twgate-EVPN-VXLAN-IPv6/clab-arista/Twgate-EVPN-VXLAN-IPv6/r4",
@@ -273,13 +273,13 @@
         "a": {
           "node": "r1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:69:e7:f8",
+          "mac": "aa:c1:ab:3f:84:16",
           "peer": "z"
         },
         "z": {
           "node": "r2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:a8:5c:7c",
+          "mac": "aa:c1:ab:10:75:65",
           "peer": "a"
         }
       }
@@ -289,13 +289,13 @@
         "a": {
           "node": "r1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:57:3f:a3",
+          "mac": "aa:c1:ab:87:dd:aa",
           "peer": "z"
         },
         "z": {
           "node": "r3",
           "interface": "eth2",
-          "mac": "aa:c1:ab:f9:27:8b",
+          "mac": "aa:c1:ab:bb:74:94",
           "peer": "a"
         }
       }
@@ -305,13 +305,13 @@
         "a": {
           "node": "r2",
           "interface": "eth2",
-          "mac": "aa:c1:ab:cf:a0:39",
+          "mac": "aa:c1:ab:10:d1:92",
           "peer": "z"
         },
         "z": {
           "node": "r4",
           "interface": "eth2",
-          "mac": "aa:c1:ab:ff:3c:df",
+          "mac": "aa:c1:ab:ea:5c:6b",
           "peer": "a"
         }
       }
@@ -321,13 +321,13 @@
         "a": {
           "node": "r1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:88:fe:35",
+          "mac": "aa:c1:ab:c5:05:45",
           "peer": "z"
         },
         "z": {
           "node": "host1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:d0:95:57",
+          "mac": "aa:c1:ab:f1:35:2a",
           "peer": "a"
         }
       }
@@ -337,13 +337,13 @@
         "a": {
           "node": "r2",
           "interface": "eth3",
-          "mac": "aa:c1:ab:24:76:5e",
+          "mac": "aa:c1:ab:78:d2:dd",
           "peer": "z"
         },
         "z": {
           "node": "host1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:0f:99:fd",
+          "mac": "aa:c1:ab:98:17:89",
           "peer": "a"
         }
       }
@@ -353,13 +353,13 @@
         "a": {
           "node": "r3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:bf:61:1d",
+          "mac": "aa:c1:ab:34:82:ff",
           "peer": "z"
         },
         "z": {
           "node": "r4",
           "interface": "eth1",
-          "mac": "aa:c1:ab:cc:f9:63",
+          "mac": "aa:c1:ab:6a:51:4c",
           "peer": "a"
         }
       }
@@ -369,13 +369,13 @@
         "a": {
           "node": "r3",
           "interface": "eth3",
-          "mac": "aa:c1:ab:a7:13:27",
+          "mac": "aa:c1:ab:e7:0d:bb",
           "peer": "z"
         },
         "z": {
           "node": "host2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:25:bd:cf",
+          "mac": "aa:c1:ab:22:09:3d",
           "peer": "a"
         }
       }
@@ -385,13 +385,13 @@
         "a": {
           "node": "r4",
           "interface": "eth3",
-          "mac": "aa:c1:ab:b0:51:19",
+          "mac": "aa:c1:ab:e4:d6:86",
           "peer": "z"
         },
         "z": {
           "node": "host2",
           "interface": "eth2",
-          "mac": "aa:c1:ab:f7:33:36",
+          "mac": "aa:c1:ab:3c:69:4f",
           "peer": "a"
         }
       }
@@ -401,13 +401,13 @@
         "a": {
           "node": "host1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:d8:35:6a",
+          "mac": "aa:c1:ab:dd:58:52",
           "peer": "z"
         },
         "z": {
           "node": "pc1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:76:8a:49",
+          "mac": "aa:c1:ab:e2:48:b3",
           "peer": "a"
         }
       }
@@ -417,13 +417,13 @@
         "a": {
           "node": "host2",
           "interface": "eth3",
-          "mac": "aa:c1:ab:ec:01:70",
+          "mac": "aa:c1:ab:dd:e2:b5",
           "peer": "z"
         },
         "z": {
           "node": "pc2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:01:bc:16",
+          "mac": "aa:c1:ab:a4:a0:d5",
           "peer": "a"
         }
       }
@@ -433,13 +433,13 @@
         "a": {
           "node": "host1",
           "interface": "eth4",
-          "mac": "aa:c1:ab:66:f4:29",
+          "mac": "aa:c1:ab:6e:db:d1",
           "peer": "z"
         },
         "z": {
           "node": "host",
           "interface": "h1-eth4",
-          "mac": "aa:c1:ab:d2:39:09",
+          "mac": "aa:c1:ab:59:a1:c1",
           "peer": "a"
         }
       }
@@ -449,13 +449,13 @@
         "a": {
           "node": "host2",
           "interface": "eth4",
-          "mac": "aa:c1:ab:89:28:45",
+          "mac": "aa:c1:ab:8c:e2:28",
           "peer": "z"
         },
         "z": {
           "node": "host",
           "interface": "h2-eth4",
-          "mac": "aa:c1:ab:8d:be:e1",
+          "mac": "aa:c1:ab:20:9f:e1",
           "peer": "a"
         }
       }

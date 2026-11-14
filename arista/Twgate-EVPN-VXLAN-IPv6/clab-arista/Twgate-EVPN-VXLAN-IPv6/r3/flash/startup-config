@@ -1,4 +1,4 @@
-! Startup-config last modified at Wed Nov 11 06:26:28 2026 by root
+! Startup-config last modified at Sat Nov 14 02:31:56 2026 by root
 ! device: r3 (cEOSLab, EOS-4.34.8M-49719987.4348M (engineering build))
 !
 no aaa root
@@ -147,6 +147,8 @@ router bgp 200
    neighbor MLAG_IPv4_UNDERLAY_PEER send-community
    neighbor MLAG_IPv6_UNDERLAY_PEER peer group
    neighbor MLAG_IPv6_UNDERLAY_PEER remote-as 200
+   neighbor MLAG_IPv6_UNDERLAY_PEER next-hop-self
+   neighbor MLAG_IPv6_UNDERLAY_PEER send-community
    neighbor MLAG_UNDERLAY_PEER peer group
    neighbor 1.1.1.1 peer group EPVN_OVERLAY
    neighbor 1.1.1.1 remote-as 100
